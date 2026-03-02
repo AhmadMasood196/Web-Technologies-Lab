@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Styled Calculator</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #1a4e9c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    background: rgb(250, 250, 249);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Basic Calculator</h2>
+
+<input type="number" id="num1" placeholder="First Number">
+<input type="number" id="num2" placeholder="Second Number">
+
+<div class="buttons">
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">÷</button>
+</div>
+
+<h3 id="result"></h3>
+
+</div>
+
+<script>
+
+function calculate(op){
+
+    let n1 = document.getElementById("num1").value;
+    let n2 = document.getElementById("num2").value;
+    let result = document.getElementById("result");
+
+  
+    if(n1 === "" || n2 === ""){
+        result.innerHTML = "Please enter both numbers!";
+        result.style.color = "red";
+        return;
+    }
+
+    n1 = Number(n1);
+    n2 = Number(n2);
+
+    let ans;
+
+    if(op === "+") ans = n1 + n2;
+    else if(op === "-") ans = n1 - n2;
+    else if(op === "*") ans = n1 * n2;
+    else if(op === "/") ans = n1 / n2;
+
+    result.innerHTML = "Result = " + ans;
+    result.style.color = "green";
+}
+
+</script>
+
+</body>
+</html>
