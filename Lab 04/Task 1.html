@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product of Two Numbers</title>
+</head>
+<body>
+
+<h2>Multiply Two Numbers</h2>
+
+<label>Enter First Number:</label>
+<input type="number" id="num1"><br><br>
+
+<label>Enter Second Number:</label>
+<input type="number" id="num2"><br><br>
+
+<button onclick="multiply()">Multiply</button>
+
+<script>
+
+function multiply(){
+
+let n1 = Number(document.getElementById("num1").value);
+let n2 = Number(document.getElementById("num2").value);
+
+let product = n1 * n2;
+
+alert("Product = " + product);
+
+}
+
+</script>
+
+</body>
+</html>
