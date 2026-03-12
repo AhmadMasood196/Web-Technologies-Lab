@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fetch API User</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(120deg,#f6d365,#fda085);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:rgb(235, 198, 118);
+padding:30px;
+border-radius:10px;
+width:320px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+button{
+background:#ff9f22;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+margin-top:15px;
+}
+
+button:hover{
+background:#f0ad49;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>User Information</h2>
+
+<button onclick="getUser()">Load User</button>
+
+<p id="userData"></p>
+
+</div>
+
+<script>
+
+function getUser(){
+
+fetch("https://jsonplaceholder.typicode.com/users/1")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+document.getElementById("userData").innerHTML=
+
+"Name: "+data.name+
+"<br>Email: "+data.email;
+
+})
+
+.catch(err=>console.log(err));
+
+}
+
+</script>
+
+</body>
+</html>
