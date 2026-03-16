@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Students Record</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #1f64b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgb(250, 247, 247);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 340px;
+}
+
+h2 {
+    text-align: center;
+    color: #080101;
+    margin-bottom: 15px;
+}
+
+.student {
+    background: #fdfeff;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 6px;
+}
+
+.result {
+    margin-top: 15px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Students Record</h2>
+
+<div id="studentsList"></div>
+
+<div class="result" id="results"></div>
+
+</div>
+
+<script>
+
+
+let students = [
+    {name: "Ali", marks: 85},
+    {name: "Ahmed", marks: 92},
+    {name: "Sara", marks: 78}
+];
+
+
+
+
+let total = 0;
+let topper = students[0];
+let listHTML = "";
+
+for(let i = 0; i < students.length; i++){
+
+    listHTML += "<div class='student'>" +
+                students[i].name + " — " +
+                students[i].marks + " marks</div>";
+
+    total += students[i].marks;
+
+    
+    if(students[i].marks > topper.marks){
+        topper = students[i];
+    }
+}
+
+
+
+let average = total / students.length;
+
+
+
+document.getElementById("studentsList").innerHTML = listHTML;
+
+document.getElementById("results").innerHTML =
+    "Average Marks: " + average.toFixed(2) + "<br>" +
+    "Topper: " + topper.name + " (" + topper.marks + " marks)";
+
+</script>
+
+</body>
+</html>
