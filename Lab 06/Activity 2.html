@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Name Saver</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#bb8135;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:rgb(233, 195, 139);
+padding:30px;
+border-radius:10px;
+width:300px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#f39f21;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#eeb948;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Save Your Name</h2>
+
+<input type="text" id="nameInput" placeholder="Enter Name">
+
+<button onclick="saveName()">Save</button>
+
+<h3 id="displayName"></h3>
+
+</div>
+
+<script>
+
+function saveName(){
+
+let name=document.getElementById("nameInput").value;
+
+localStorage.setItem("name",name);
+
+showName();
+
+}
+
+function showName(){
+
+let storedName=localStorage.getItem("name");
+
+if(storedName){
+
+document.getElementById("displayName").innerText="Welcome "+storedName;
+
+}
+
+}
+
+window.onload=showName;
+
+</script>
+
+</body>
+</html>

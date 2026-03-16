@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Checker</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #1a64be;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgb(247, 244, 244);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 280px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0069d9;
+}
+
+#msg {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Number Checker</h2>
+
+<input type="number" id="num" placeholder="Enter a number">
+
+<button onclick="checkNumber()">Check</button>
+
+<h3 id="msg"></h3>
+
+</div>
+
+<script>
+
+function checkNumber(){
+
+    let n = document.getElementById("num").value;
+
+   
+    if(n === ""){
+        alert("Please enter a number!");
+        return;
+    }
+
+    n = Number(n);
+
+    let text = (n % 2 === 0) ? "Even Number" : "Odd Number";
+
+    let msg = document.getElementById("msg");
+    msg.innerHTML = text;
+
+    
+    if(n >= 0){
+        msg.style.color = "green";
+    } else {
+        msg.style.color = "red";
+    }
+}
+
+</script>
+
+</body>
+</html>

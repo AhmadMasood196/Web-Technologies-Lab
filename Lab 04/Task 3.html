@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loop Task</title>
+</head>
+<body>
+
+<h2>Loop Output</h2>
+
+<h3>Numbers 1 to 20</h3>
+<p id="numbers"></p>
+
+<h3>Even Numbers</h3>
+<p id="even"></p>
+
+<h3>Reverse Order (10 to 1)</h3>
+<p id="reverse"></p>
+
+<script>
+
+let text1 = "";
+for(let i = 1; i <= 20; i++){
+text1 += i + " ";
+}
+document.getElementById("numbers").innerHTML = text1;
+
+let text2 = "";
+for(let i = 2; i <= 20; i+=2){
+text2 += i + " ";
+}
+document.getElementById("even").innerHTML = text2;
+
+let text3 = "";
+for(let i = 10; i >= 1; i--){
+text3 += i + " ";
+}
+document.getElementById("reverse").innerHTML = text3;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Array Operations</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #245ec2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgb(245, 243, 243);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 320px;
+}
+
+h2 {
+    text-align: center;
+    color: #080505;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Array Operations</h2>
+
+<p id="output"></p>
+
+</div>
+
+<script>
+
+
+let arr = [2, 17, 2, 13, 28, 100];
+
+
+
+let sum = 0;
+for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+}
+
+
+
+let max = arr[0];
+
+for(let i = 1; i < arr.length; i++){
+    if(arr[i] > max){
+        max = arr[i];
+    }
+}
+
+
+
+let reversed = arr.slice().reverse();
+
+
+
+document.getElementById("output").innerHTML =
+    "<b>Original Array:</b> " + arr + "<br><br>" +
+    "<b>Sum:</b> " + sum + "<br>" +
+    "<b>Largest Number:</b> " + max + "<br>" +
+    "<b>Reversed Array:</b> " + reversed;
+
+</script>
+
+</body>
+</html>
