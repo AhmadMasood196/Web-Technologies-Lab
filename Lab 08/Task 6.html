@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="">
+<h2>Login System</h2>
+
+Username: <input type="text" ng-model="user"><br><br>
+Password: <input type="password" ng-model="pass"><br><br>
+
+<button ng-click="result = (user=='admin' && pass=='1234') ? 'Login Successful' : 'Invalid Credentials'">
+Login
+</button>
+
+<p>{{result}}</p>
+
+</body>
+</html>

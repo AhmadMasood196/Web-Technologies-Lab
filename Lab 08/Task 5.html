@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do App</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="" ng-init="tasks=[]">
+
+<h2>To-Do List</h2>
+
+<input type="text" ng-model="newTask">
+<button ng-click="tasks.push(newTask)">Add Task</button>
+
+<ul>
+<li ng-repeat="t in tasks">
+{{t}}
+</li>
+</ul>
+
+</body>
+</html>

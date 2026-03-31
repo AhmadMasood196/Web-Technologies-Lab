@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee List</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="" ng-init="employees=[
+{name:'Ali', dept:'IT'},
+{name:'Sara', dept:'HR'},
+{name:'Ahmed', dept:'Finance'},
+{name:'Zara', dept:'Marketing'},
+{name:'Usman', dept:'Admin'}
+]">
+
+<h2>Employee List</h2>
+
+<ul>
+<li ng-repeat="e in employees">
+{{e.name}} - {{e.dept}}
+</li>
+</ul>
+
+</body>
+</html>
